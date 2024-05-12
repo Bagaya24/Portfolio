@@ -1,18 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/output.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/output.css') }}"
+    />
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <div class="bg-red-100">
-            Bonjour
+  </head>
+  <body>
+    <main class="flex h-screen w-full items-center justify-center p-5">
+      <div class="grid grid-cols-4 grid-rows-12 gap-4 h-full w-full">
+      <!--navbar-->
+      <section class="col-span-full row-span-2 rounded flex justify-center items-center shadow">
+        <div class="grid grid-cols-4 w-full ">
+            <div class="col-span-1 mr-5 border-r-2 border-b-blue-100">
+                <h2 class="uppercase text-center font-bold text-5xl text-blue-900 hover:text-blue-950">portfolio</h2>
+            </div>
+            <div class="col-span-3 flex justify-around text-xl font-semibold">
+                <a class="bg-blue-100 border border-b-2 border-b-blue-400 text-blue-800 p-1 hover:cursor-pointer">Accueil</a>
+                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400">Contact</a>
+                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400">A propos</a>
+            </div>
+
         </div>
-    </div>
-</body>
+      </section>
+      <!--profil-->
+      <section class="col-span-1 row-span-6 bg-red-50 rounded flex justify-center items-center">
+        <div class="grid grid-rows-3">
+        <div class="row-span-1 border-b-2 border-dashed border-blue-100">
+            <img src="{{url_for('static', filename='assets/images/WhatsApp Image 2024-03-31 à 11.23.43_914c86bb.jpg')}}" 
+            alt="photo de profil" class="w-20 rounded-full">
+            <h2 class="text-blue-950 text-2xl font-semibold">BAGAYA Fazili Glody</h2>
+            <span class="text-blue-300 text-sm">Ingenieur informatique</span>
+        </div>
+        <div class="row-span-2">
+            <ul class="p-2 text-blue-400">
+                <li>Numero
+                    <ul class="text-blue-300 text-sm ml-3">
+                        <li>+243 973695396</li>
+                        <li>+243 896805224</li>
+                    </ul>
+                </li>
+                <li>Email
+                    <ul class="text-blue-300 text-sm ml-3">
+                        <li>bagayafazili@gmail.com</li>
+                    </ul>
+                </li>
+
+                <li>Adresse
+                    <ul class="text-blue-300 text-sm ml-3">
+                        <li>Q.Les volcans R. Lynlusi N 06</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+      </section>
+      <!--contenue-->
+      <section class="col-span-3 row-span-8 bg-red-200 rounded flex justify-center items-center">
+        <div class="grid grid-rows-8 gap-4 h-full w-full ">
+            <div class="bg-gray-50 row-span-2">
+                <h2 class="text-6xl text-blue-900 font-ti text-center">Salut, moi c'est BAGAYA</h2>
+                <p>Je suis ingernieur en genie informatique, devellopeur, j'aime coder et surtout apprendre de nouvelles choses</p>
+            </div>
+            <div class="bg-red-50 row-span-4">
+                <h2>Mes competences</h2>
+                <div class="grid grid-cols-3 w-full h-full">
+                    <div>
+                        <h3>Mes langages</h3>
+                        <ul>
+                            <li>
+                                <span>Python</span>
+                                <span>⭐⭐⭐</span>
+                            </li>
+                            <li>
+                                <span>SQL</span>
+                                <span>⭐⭐</span>
+                            </li>
+                            <li>
+                                <span>HTML</span>
+                                <span>⭐⭐</span>
+                            </li>
+                            <li>
+                                <span>CSS</span>
+                                <span>⭐⭐</span>
+                            </li>
+                            <li>
+                                <span>C++</span>
+                                <span>⭐⭐</span>
+                            </li>
+                            <li>
+                                <span>Java</span>
+                                <span>⭐</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>C'est que je peut faire en code:</h3>
+                        <ul>
+                            <li>Logiciel de bureau</li>
+                            <li>Application de gestion</li>
+                            <li>Application web</li>
+                            <li>Blog</li>
+                            <li>Analyse de donner</li>
+                        </ul>
+                    </div>
+                    <div></div>
+
+                </div>
+            </div>
+            <div class="bg-gray-50 row-span-2"></div>
+        </div>
+      </section>
+      <!--footer-->
+      <section class="col-span-full row-span-2 bg-red-200 rounded flex justify-center items-center"></section>
+      </div>
+    </main>
+  </body>
 </html>
