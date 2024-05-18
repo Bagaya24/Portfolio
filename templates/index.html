@@ -14,47 +14,54 @@
     <title>Document</title>
   </head>
   <body>
-    <main class="flex h-screen w-full items-center justify-center p-5">
-      <div class="grid grid-cols-4 grid-rows-12 gap-4 h-full w-full">
+    <main class="p-5">
       <!--navbar-->
-      <section class="col-span-full row-span-2 rounded flex justify-center items-center shadow">
-        <div class="grid grid-cols-4 w-full ">
-            <div class="col-span-1 mr-5 border-r-2 border-b-blue-100">
-                <h2 class="uppercase text-center font-bold text-5xl text-blue-900 hover:text-blue-950">portfolio</h2>
+      <section class="rounded shadow bg-white fixed top-0 left-0 right-0">
+        <div class="grid grid-cols-4">
+            <div class="col-span-1 mr-5 ">
+                <h2 class="uppercase text-center font-bold md:text-5xl text-4xl text-blue-900 hover:text-blue-950">portfolio</h2>
             </div>
-            <div class="col-span-3 flex justify-around text-xl font-semibold">
-                <a class="bg-blue-100 border border-b-2 border-b-blue-400 text-blue-800 p-1 hover:cursor-pointer">Accueil</a>
-                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400">Contact</a>
-                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400">A propos</a>
+            <div class=" col-span-3 flex justify-end px-20 md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-500 hover:text-gray-900">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" id="burger" />
+                </svg>
+            </div>
+            <div class="col-span-3 md:flex justify-end md:mr-20 font-semibold hidden" id="menu">
+                <a class="bg-blue-100 border border-b-2 border-b-blue-400 text-blue-800 p-1 hover:cursor-pointer mx-11" href="{{url_for('home')}}">Accueil</a>
+                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400  mx-11" href="{{url_for('contact')}}">Contact</a>
+                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400 mx-11" href="{{url_for('about')}}">A propos</a>
             </div>
 
         </div>
       </section>
+      <div class="lg:grid grid-cols-12 w-full gap-4 m-5">
       <!--profil-->
-      <section class="col-span-1 row-span-6 bg-red-50 rounded flex justify-center items-center">
-        <div class="grid grid-rows-3">
+      <section class="h-96 w-56 col-span-2 bg-white-50 rounded lg:flex justify-center items-center shadow hidden mt-16">
+        <div class="grid grid-rows-2 ">
         <div class="row-span-1 border-b-2 border-dashed border-blue-100">
+            <div class="flex justify-center">
             <img src="{{url_for('static', filename='assets/images/WhatsApp Image 2024-03-31 à 11.23.43_914c86bb.jpg')}}" 
             alt="photo de profil" class="w-20 rounded-full">
-            <h2 class="text-blue-950 text-2xl font-semibold">BAGAYA Fazili Glody</h2>
-            <span class="text-blue-300 text-sm">Ingenieur informatique</span>
+            </div>
+            <h3 class="text-gray-700 text-2xl font-semibold">BAGAYA Fazili Glody</h3>
+            <span class="text-gray-300 text-sm">Ingenieur informatique</span>
         </div>
         <div class="row-span-2">
-            <ul class="p-2 text-blue-400">
+            <ul class="p-2 text-gray-600">
                 <li>Numero
-                    <ul class="text-blue-300 text-sm ml-3">
+                    <ul class="text-gray-300 text-sm ml-3">
                         <li>+243 973695396</li>
                         <li>+243 896805224</li>
                     </ul>
                 </li>
                 <li>Email
-                    <ul class="text-blue-300 text-sm ml-3">
+                    <ul class="text-gray-300 text-sm ml-3">
                         <li>bagayafazili@gmail.com</li>
                     </ul>
                 </li>
 
                 <li>Adresse
-                    <ul class="text-blue-300 text-sm ml-3">
+                    <ul class="text-gray-300 text-sm ml-3">
                         <li>Q.Les volcans R. Lynlusi N 06</li>
                     </ul>
                 </li>
@@ -64,47 +71,47 @@
         </div>
       </section>
       <!--contenue-->
-      <section class="col-span-3 row-span-8 bg-red-200 rounded flex justify-center items-center">
-        <div class="grid grid-rows-8 gap-4 h-full w-full ">
-            <div class="bg-gray-50 row-span-2">
-                <h2 class="text-6xl text-blue-900 font-ti text-center">Salut, moi c'est BAGAYA</h2>
-                <p>Je suis ingernieur en genie informatique, devellopeur, j'aime coder et surtout apprendre de nouvelles choses</p>
+      <section class="col-span-10  rounded flex justify-center items-center">
+        <div class="w-full ">
+            <div class="m-16">
+                <h2 class="text-6xl text-gray-700 font-ti text-center">Salut, moi c'est BAGAYA</h2>
+                <p class="text-gray-500 text-center">Je suis ingernieur <span class="text-xl text-gray-700 font-semibold">en genie informatique et  devellopeur </span>, j'aime coder et surtout apprendre de nouvelles choses</p>
             </div>
-            <div class="bg-red-50 row-span-4">
-                <h2>Mes competences</h2>
-                <div class="grid grid-cols-3 w-full h-full">
-                    <div>
-                        <h3>Mes langages</h3>
-                        <ul>
+            <div class="m-16">
+                <h2 class="text-3xl text-gray-700 text-center font-bold p-4">Mes competences</h2>
+                <div class="lg:grid grid-cols-3 h-full gap-2">
+                    <div class="bg-white shadow-md rounded-md mb-2">
+                        <h3 class="text-xl text-blue-700 font-semibold text-center">Mes langages:</h3>
+                        <ul class="text-sm text-gray-600 text-center font-semibold">
                             <li>
                                 <span>Python</span>
-                                <span>⭐⭐⭐</span>
+                                
                             </li>
                             <li>
                                 <span>SQL</span>
-                                <span>⭐⭐</span>
+                                
                             </li>
                             <li>
                                 <span>HTML</span>
-                                <span>⭐⭐</span>
+                                
                             </li>
                             <li>
                                 <span>CSS</span>
-                                <span>⭐⭐</span>
+                                
                             </li>
                             <li>
                                 <span>C++</span>
-                                <span>⭐⭐</span>
+                                
                             </li>
                             <li>
                                 <span>Java</span>
-                                <span>⭐</span>
+                               
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <h3>C'est que je peut faire en code:</h3>
-                        <ul>
+                    <div class="bg-white shadow-md rounded-md mb-2">
+                        <h3 class="text-xl text-blue-700 font-semibold text-center">C'est que je peut faire en code:</h3>
+                        <ul class="text-sm text-gray-600 text-center font-semibold">
                             <li>Logiciel de bureau</li>
                             <li>Application de gestion</li>
                             <li>Application web</li>
@@ -112,16 +119,92 @@
                             <li>Analyse de donner</li>
                         </ul>
                     </div>
-                    <div></div>
+                    <div class="bg-white shadow-md rounded-md mb-2">
+                        <h3 class="text-xl text-blue-700 font-semibold text-center">C'est que je sais faire en electronique:</h3>
+                        <ul class="text-sm text-gray-600 text-center font-semibold">
+                            <li>Installation des antennes</li>
+                            <li>Petite installation domestique</li>
+                            <li>Reparation des appareils electronique</li>
+                            
+                        </ul>
+                    </div>
 
                 </div>
             </div>
-            <div class="bg-gray-50 row-span-2"></div>
+            <div class="m-16">
+                <h2 class="text-3xl text-gray-700 text-center font-bold">Mon experience</h2>
+                <p class="text-gray-600 text-xl text-pretty text-center">Apres avoir fait l'electronique de l'institut technique industriel de Goma, j'ai fait 2 ans de stages dans une 
+                    maison canal plus et actuellement je fait mes etudes universitair en genie informatique a l'Universite de 
+                    Pays de Grands Lacs(ULPG)</p>
+            </div>
+            <div class="m-16">
+                <h2 class="text-3xl text-gray-700 text-center font-bold">Mes projets</h2>
+                <p class="text-gray-600 text-pretty text-center">Etant un devellopeur qui cherche toujous a apprendre et s'ameliorer, j'ai eu a faire beaucoup de projets</p>
+                <div class="lg:grid grid-cols-3 gap-3 mt-5">
+                    <div class="shadow p-3">
+                        <h3 class="text-gray-600 text-center text-xl font-semibold hover:underline"><a href="https://github.com/Bagaya24/Student-management-.git">Systeme de gestion d'enregistrement des etudiants (ULGL)</a></h3>
+                        <p class="text-gray-500 text-sm text-left">C'est un logiciel que permet d'enregistrer, voir, effacer les etudiants de ULGL</p>
+                        
+                    </div>
+                    <div class="shadow p-3">
+                        <h3 class="text-gray-600 text-center text-xl font-semibold hover:underline"><a href="https://github.com/Bagaya24/snack_game.git">Snack game</a></h3>
+                        <p class="text-gray-500 text-sm text-left">Le jeux classique du serpent fait avec python et tkinter</p>
+                        
+                    </div>
+                    <div class="shadow p-3">
+                        <h3 class="text-gray-600 text-center text-xl font-semibold hover:underline"><a href="https://github.com/Bagaya24/trie_automatique.git">Trie de fichier</a></h3>
+                        <p class="text-gray-500 text-sm text-left">Un petit script python qui permet de trier et repertorier des fichiers dans n'importe que dossier</p>
+                        
+                        
+                        
+                    </div>
+                    <div class="shadow p-3">
+                        <h3 class="text-gray-600 text-center text-xl font-semibold hover:underline"><a href="https://github.com/Bagaya24/chercheur_d_appartement-.git">Chercheur d'appartement (los angeles)</a></h3>
+                        <p class="text-gray-500 text-sm text-left">La ville de Los angeles etant trop grande, on peut s'y perdre en cherchant un maison ou un appartement, 
+                            mon script permet de grouper les maisons ou appartements selon votre budgets
+                        </p>
+                        
+                    </div>
+                    <div class="shadow p-3">
+                        <h3 class="text-gray-600 text-center text-xl font-semibold hover:underline"><a href="https://github.com/Bagaya24/devise_dashboard-.git">Devise dashboard</a></h3>
+                        <p class="text-gray-500 text-sm text-left">C'est une plateforme ou l'on peut visualiser a travers de courbe, la variation de differentes devises</p>
+                        
+                    </div>
+                    <div class="shadow p-3">
+                        <h3 class="text-gray-600 text-center text-xl font-semibold hover:underline"><a href="https://github.com/Bagaya24/trie_de_mot_pr-f-r-s_des_musiciens.git">Chercheur de mots</a></h3>
+                        <p class="text-gray-500 text-sm text-left">Vous vous etes toujours demande ce quoi le mot prefere de votre artiste preferee? Voila le script qui permet
+                            de voir le mot prefere de votre astise
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
       </section>
+    </div>
       <!--footer-->
-      <section class="col-span-full row-span-2 bg-red-200 rounded flex justify-center items-center"></section>
-      </div>
+      <section class="col-span-full  bg-blue-50 p-0">
+        <footer class=" m-4 ">
+            <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+              <span class="text-sm text-gray-500 sm:text-center">© {{date}} <a href="{{url_for('home')}}" class="hover:underline">Bagaya™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
+                <li class="mx-5">
+                    <a href="{{url_for('contact')}}" class="me-4 md:me-6"><img src="{{url_for('static', filename='./assets/icons/gmail.png')}}" alt="gmail icon"></a>
+                </li>
+                <li class="mx-5">
+                    <a href="https://github.com/Bagaya24" class="hover:underline me-4 md:me-6"><img src="{{url_for('static', filename='./assets/icons/reseaux-sociaux.png')}}" alt="githbub icon"></a>
+                </li>
+                <li class="mx-5">
+                    <a href="https://x.com/FaziliBagaya" class="hover:underline me-4 md:me-6"><img src="{{url_for('static', filename='./assets/icons/twitter.png')}}" alt="twitter icon"></a>
+              
+                </li>
+                
+            </ul>
+            </div>
+          </footer>
+
+      </section>
     </main>
   </body>
+  <script src="{{url_for('static', filename='js/index.js')}}"></script>
 </html>

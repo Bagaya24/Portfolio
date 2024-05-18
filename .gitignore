@@ -5,9 +5,13 @@ __pycache__/
 
 # C extensions
 *.so
-
+teste.py
+package-lock.json
+package.json
+tailwind.config.js
 # Distribution / packaging
 .Python
+node_modules/
 build/
 develop-eggs/
 dist/
@@ -147,6 +151,7 @@ dmypy.json
 package.json
 package-lock.json
 tailwind.config.js
+teste.py
 # Pyre type checker
 .pyre/
 

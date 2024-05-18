@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/output.css') }}"
+    />
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="flex justify-center items-center w-full h-screen">
+      <div class="grid grid-rows-12 grid-cols-2  w-full h-full gap-2">
+        <section class="col-span-full row-span-1 rounded bg-white shadow flex items-center">
+          <div class="grid grid-cols-4">
+            <div class="col-span-1 mr-5">
+                <h2 class="uppercase text-center font-bold md:text-5xl text-4xl text-blue-900 hover:text-blue-950">portfolio</h2>
+            </div>
+            <div class=" col-span-3 flex justify-end px-20 md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-gray-600 hover:text-gray-800">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" id="burger"/>
+              </svg>
+            </div>
+            <div class="col-span-3 md:flex justify-end mr-20 font-semibold hidden" id="menu">
+                <a class="bg-white border-b-2 border-b-white text-blue-800 p-1 hover:cursor-pointer hover:border-b-blue-400  mx-11" href="{{url_for('home')}}">Accueil</a>
+                <a class="bg-blue-100 border-b-2 border-b-blue-400 text-blue-600 p-1 hover:cursor-pointer  mx-11" href="{{url_for('contact')}}">Contact</a>
+                <a class="bg-white border-b-2 border-b-white text-blue-600 p-1 hover:cursor-pointer hover:border-b-blue-400 mx-11" href="{{url_for('about')}}">A propos</a>
+            </div>
+
+        </div>
+        </section>
+        <!--carte-->
+        <section class="col-span-1 row-span-9 rounded bg-white">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.1016501986205!2d29.225592879345704!3d-1.680815600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd0f5ec4b424f1%3A0x9e6ab691c02e5b55!2sControlSys%20DRC!5e0!3m2!1sfr!2scd!4v1715793090755!5m2!1sfr!2scd" 
+          class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <!--form-->
+        <section class="col-span-1 row-span-9 rounded bg-white p-4">
+          <div class="flex justify-center items-center">
+          <form action="{{url_for('contact')}}" method="post">
+            <h2 class="text-gray-800 text-4xl text-center font-bold p-4 uppercase ">contacter nous</h2>
+            {{ form.csrf_token }}
+            {{form.nom.label(class="text-gray-700 font-semibold text-xl")}}
+            <br>
+            {{form.nom(size=40, class="bg-gray-50 border border-gray-300 text-gray-800  rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full p-1 ")}}
+            <br>
+            {{form.email.label(class="text-gray-700 font-semibold text-xl")}}
+            <br>
+            {{form.email(size=40, class="bg-gray-50 border border-gray-300 text-gray-800  rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full p-1 ")}}
+            <br>
+            {{form.body.label(class="text-gray-700 font-semibold text-xl")}}
+            <br>
+            {{form.body(size=40, class="bg-gray-50 border border-gray-300 text-gray-800  rounded-lg  focus:ring-blue-500 focus:border-blue-500 block w-full p-1 ")}}
+            <br>
+            {{form.submit(class="border-2 p-2 pl-4 pr-4 rounded-lg text-center font-semibold text-gray-700 border-blue-400 bg-white hover:bg-blue-500 hover:text-gray-50 transition ease-linear duration-300")}}
+
+          </form>
+        </div>
+        </section>
+        <!--footer-->
+        <section class="col-span-full row-span-2 bg-blue-50">
+          <footer class=" m-4 ">
+            <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+              <span class="text-sm text-gray-500 sm:text-center">© {{date}} <a href="{{url_for('home')}}" class="hover:underline">Bagaya™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
+                <li class="mx-5">
+                  <a href="{{url_for('contact')}}" class="me-4 md:me-6"><img src="{{url_for('static', filename='./assets/icons/gmail.png')}}" alt="gmail icon"></a>
+              </li>
+              <li class="mx-5">
+                  <a href="https://github.com/Bagaya24" class="hover:underline me-4 md:me-6"><img src="{{url_for('static', filename='./assets/icons/reseaux-sociaux.png')}}" alt="githbub icon"></a>
+              </li>
+              <li class="mx-5">
+                  <a href="https://x.com/FaziliBagaya" class="hover:underline me-4 md:me-6"><img src="{{url_for('static', filename='./assets/icons/twitter.png')}}" alt="twitter icon"></a>
+            
+              </li>
+                
+            </ul>
+            </div>
+          </footer>
+
+        </section>
+      </div>
+    </main>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+  </body>
+  
+  </html>
